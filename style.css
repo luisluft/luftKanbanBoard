@@ -50,6 +50,7 @@ ul {
 
 /* Columns */
 .drag-column {
+  flex: 1;
   margin: 0 10px;
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
@@ -88,7 +89,7 @@ ul {
 /* Custom Scrollbar */
 .custom-scroll {
   overflow-y: auto;
-  max-height: 75vh;
+  max-height: 52vh;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -146,12 +147,12 @@ ul {
 }
 
 /* Add Button Group */
-.add-btn-group {
+.add-button-group {
   display: flex;
   justify-content: space-between;
 }
 
-.add-btn {
+.add-button {
   margin: 10px;
   padding: 5px 10px;
   display: flex;
@@ -163,12 +164,12 @@ ul {
   user-select: none;
 }
 
-.add-btn:hover {
+.add-button:hover {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
 }
 
-.add-btn:active {
+.add-button:active {
   transform: scale(0.97);
 }
 

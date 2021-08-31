@@ -10,7 +10,128 @@
     </head>
 
     <body>
-        <h1 class="main-title">Kanban Board</h1>
+        <h1 class="main-title">Luft Kanban Board</h1>
+        <div class="drag-container">
+            <ul class="drag-list">
+                <!-- Backlog Column -->
+                <li class="drag-column backlog-column">
+                    <span class="header">
+                        <h1>Backlog</h1>
+                    </span>
+                    <!-- Backlog Content -->
+                    <div class="custom-scroll" id="backlog-content">
+                        <ul class="drag-item-list" id="backlog-list">
+                            <li class="drag-item">Testing</li>
+                            <li class="drag-item">Testing</li>
+                        </ul>
+                    </div>
+                    <!-- Buttons group -->
+                    <div class="add-button-group">
+                        <div class="add-button">
+                            <span class="plus-sign">+</span>
+                            <span>Add Item</span>
+                        </div>
+                        <div class="add-button solid">Save Item</div>
+                        <div class="add-container">
+                            <div class="add-item"></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Progress Column -->
+                <li class="drag-column progress-column">
+                    <span class="header">
+                        <h1>Progress</h1>
+                    </span>
+                    <!-- Progress Content -->
+                    <div class="custom-scroll" id="progress-content">
+                        <ul class="drag-item-list" id="progress-list">
+                            <li class="drag-item">Testing</li>
+                            <li class="drag-item">Testing</li>
+                        </ul>
+                    </div>
+                    <!-- Buttons group -->
+                    <div class="add-button-group">
+                        <div class="add-button">
+                            <span class="plus-sign">+</span>
+                            <span>Add Item</span>
+                        </div>
+                        <div class="add-button solid">Save Item</div>
+                        <div class="add-container">
+                            <div class="add-item"></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Complete Column -->
+                <li class="drag-column complete-column">
+                    <span class="header">
+                        <h1>Complete</h1>
+                    </span>
+                    <!-- Complete Content -->
+                    <div class="custom-scroll" id="complete-content">
+                        <ul class="drag-item-list" id="complete-list">
+                            <li class="drag-item">Testing</li>
+                            <li class="drag-item">Testing</li>
+                        </ul>
+                    </div>
+                    <!-- Buttons group -->
+                    <div class="add-button-group">
+                        <div class="add-button">
+                            <span class="plus-sign">+</span>
+                            <span>Add Item</span>
+                        </div>
+                        <div class="add-button solid">Save Item</div>
+                        <div class="add-container">
+                            <div class="add-item"></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- On-Hold Column -->
+                <li class="drag-column on-hold-column">
+                    <span class="header">
+                        <h1>On-Hold</h1>
+                    </span>
+                    <!-- On-Hold Content -->
+                    <div class="custom-scroll" id="on-hold-content">
+                        <ul class="drag-item-list" id="on-hold-list">
+                            <li class="drag-item">Testing</li>
+                            <li class="drag-item">Testing</li>
+                            <li class="drag-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                                cupiditate alias at necessitatibus dicta ipsam, quaerat tempora, doloribus rerum amet
+                                consequatur similique odit earum deleniti consectetur adipisci corrupti placeat?
+                                Dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, fugit quidem
+                                voluptatem veritatis hic laboriosam, laborum recusandae illo et odio vero distinctio.
+                                Labore aut atque quasi nesciunt, nihil facilis vero. Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Maiores, animi magnam atque placeat excepturi doloribus
+                                quam explicabo magni quae suscipit rem, quia pariatur distinctio, soluta fugiat omnis?
+                                Vel, minima neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error id
+                                ratione autem fuga dolorem porro! Laborum voluptatem unde consequatur vero iusto. Porro
+                                quod ipsa nisi eligendi cupiditate voluptatem perspiciatis non. Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Dolores magnam soluta dignissimos delectus nulla?
+                                Quae itaque nisi officiis quia numquam quasi omnis ratione voluptatum cumque, quos
+                                corrupti iure modi voluptates. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Illo quas inventore dolorem, quaerat vel fuga quod quis saepe, quia reprehenderit eum
+                                voluptatum aliquam. Adipisci earum sed deserunt, rem debitis harum?</li>
+                        </ul>
+                    </div>
+                    <!-- Buttons group -->
+                    <div class="add-button-group">
+                        <div class="add-button">
+                            <span class="plus-sign">+</span>
+                            <span>Add Item</span>
+                        </div>
+                        <div class="add-button solid">Save Item</div>
+                        <div class="add-container">
+                            <div class="add-item"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
         <!-- Script -->
         <script src="script.js"></script>
     </body>
