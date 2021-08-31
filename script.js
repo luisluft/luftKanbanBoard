@@ -52,10 +52,6 @@ function updateSavedColumns() {
 
 // Create DOM Elements for each list item
 function createItemElements(columnElement, column, item, index) {
-  // console.log("columnElement:", columnEl);
-  // console.log("column:", column);
-  // console.log("item:", item);
-  // console.log("index:", index);
   // List Item
   const listElement = document.createElement("li");
   listElement.classList.add("drag-item");
@@ -67,7 +63,6 @@ function createItemElements(columnElement, column, item, index) {
 
 function dragItem(event) {
   draggedItem = event.target;
-  console.log("draggedItem :", draggedItem);
 }
 
 function allowDrop(event) {
@@ -84,8 +79,8 @@ function dropItem(event) {
 
   // Add item to the column
   const droppedColumn = listColumns[currentColumn];
-  console.log("droppedColumn :", droppedColumn);
   droppedColumn.appendChild(draggedItem);
+  saveDragAndDroppedItems();
 }
 
 function dragEnter(column) {
@@ -123,6 +118,33 @@ function updateDOM() {
   });
 
   // Run getSavedColumns only once, Update Local Storage
+  updatedOnLoad = true;
+  updateSavedColumns();
+}
+
+// aka rebuildArrays()
+function saveDragAndDroppedItems() {
+  // Empty all the columns
+  backlogListArray = [];
+  progressListArray = [];
+  completeListArray = [];
+  onHoldListArray = [];
+
+  // Save each item on each column to their corresponding array
+  for (let i = 0; i < backlogList.children.length; i++) {
+    backlogListArray.push(backlogList.children[i].textContent);
+  }
+  for (let i = 0; i < progressList.children.length; i++) {
+    progressListArray.push(progressList.children[i].textContent);
+  }
+  for (let i = 0; i < completeList.children.length; i++) {
+    completeListArray.push(completeList.children[i].textContent);
+  }
+  for (let i = 0; i < onHoldList.children.length; i++) {
+    onHoldListArray.push(onHoldList.children[i].textContent);
+  }
+
+  updateDOM();
 }
 
 // On Load
