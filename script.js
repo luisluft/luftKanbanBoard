@@ -58,6 +58,9 @@ function createItemElements(columnElement, column, item, index) {
   listElement.textContent = item;
   listElement.draggable = true;
   listElement.setAttribute("ondragstart", "dragItem(event)");
+  listElement.contentEditable = true;
+  listElement.id = index;
+  listElement.setAttribute("onfocusout", `updateItem(${index},${column})`);
   columnElement.appendChild(listElement);
 }
 
@@ -98,24 +101,28 @@ function updateDOM() {
   backlogListArray.forEach((backlogItem, index) => {
     createItemElements(backlogList, 0, backlogItem, index);
   });
+  backlogListArray = filterArray(backlogListArray);
 
   // Progress Column
   progressList.textContent = "";
   progressListArray.forEach((progressItem, index) => {
-    createItemElements(progressList, 0, progressItem, index);
+    createItemElements(progressList, 1, progressItem, index);
   });
+  progressListArray = filterArray(progressListArray);
 
   // Complete Column
   completeList.textContent = "";
   completeListArray.forEach((completeItem, index) => {
-    createItemElements(completeList, 0, completeItem, index);
+    createItemElements(completeList, 2, completeItem, index);
   });
+  completeListArray = filterArray(completeListArray);
 
   // On Hold Column
   onHoldList.textContent = "";
   onHoldListArray.forEach((onHoldItem, index) => {
-    createItemElements(onHoldList, 0, onHoldItem, index);
+    createItemElements(onHoldList, 3, onHoldItem, index);
   });
+  onHoldListArray = filterArray(onHoldListArray);
 
   // Run getSavedColumns only once, Update Local Storage
   updatedOnLoad = true;
@@ -167,6 +174,21 @@ function saveToColumn(column) {
   const selectedArray = listArrays[column];
   selectedArray.push(itemText);
   updateDOM();
+}
+
+function updateItem(id, column) {
+  const selectedArray = listArrays[column];
+  const selectedElement = listColumns[column].children;
+
+  if (!selectedElement[id].textContent) delete selectedArray[id];
+
+  updateDOM();
+}
+
+function filterArray(array) {
+  const filteredArray = array.filter((item) => item !== null);
+
+  return filteredArray;
 }
 
 // On Load
