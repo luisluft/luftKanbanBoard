@@ -147,5 +147,27 @@ function saveDragAndDroppedItems() {
   updateDOM();
 }
 
+function showInputBox(column) {
+  addButtons[column].style.visibility = "hidden";
+  saveItemButtons[column].style.display = "flex";
+  addItemContainers[column].style.display = "flex";
+}
+
+function saveInputBox(column) {
+  addButtons[column].style.visibility = "visible";
+  saveItemButtons[column].style.display = "none";
+  addItemContainers[column].style.display = "none";
+  saveToColumn(column);
+}
+
+function saveToColumn(column) {
+  const itemText = addItems[column].textContent;
+  addItems[column].textContent = "";
+
+  const selectedArray = listArrays[column];
+  selectedArray.push(itemText);
+  updateDOM();
+}
+
 // On Load
 updateDOM();
